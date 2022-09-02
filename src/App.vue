@@ -1,5 +1,5 @@
 <template>
-  <div class="main">
+  <div class="app">
     <div class="wrapper">
       <Header />
       <Content />
@@ -18,7 +18,7 @@ import Footer from './components/footer/Footer.vue';
 import SideBar from './components/sideBar/SideBar.vue';
 
 export default {
-  name: 'main',
+  name: 'app',
   components: {
     Header,
     Content,
@@ -29,7 +29,7 @@ export default {
 </script>
 
 <style scoped>
-.main {
+.app {
   display: flex;
   width: 100%;
   height: 100vh;

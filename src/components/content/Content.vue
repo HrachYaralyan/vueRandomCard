@@ -16,7 +16,7 @@ export default {
   },
   components: { CardBox },
   methods: {
-    checkLocalData() {
+    setLocalData() {
       if (localStorage.getItem('LocalData')) {
         this.stateController.getData(
           JSON.parse(localStorage.getItem('LocalData'))
@@ -30,7 +30,7 @@ export default {
     },
   },
   mounted() {
-    this.checkLocalData();
+    this.setLocalData();
   },
 };
 </script>
