@@ -1,16 +1,29 @@
 <template>
   <div class="header">
-    <AddButton />
-    <SortButton />
+    <Button @click='addCard'> Add Card</Button> 
+    <Button @click='sortCards'> Sort Post</Button> 
   </div>
 </template>
 
 <script>
-import AddButton from './addButton/AddButton.vue';
-import SortButton from './sortButton/SortButton.vue';
+import Button from './buttons/Button.vue';
+import { useCardStore } from '../../stores/counter';
+
 export default {
   name: 'Header',
-  components: { AddButton, SortButton },
+  setup() {
+    const stateController = useCardStore();
+    return { stateController };
+  },
+  components: { Button },
+  methods: {
+    addCard() {
+      this.stateController.addCard()
+    },
+    sortCards() {
+      this.stateController.sortCard()
+    },
+  },
 };
 </script>
 

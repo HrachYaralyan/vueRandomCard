@@ -1,16 +1,16 @@
 <template>
   <div>
-    <MainCardSection />
+    <WrapperCards />
   </div>
 </template>
 
 <script>
-import MainCardSection from './components/MainCard.vue';
+import WrapperCards from './components/WrapperCards.vue'; 
 
 export default {
-  name: 'MainCard',
+  name: 'mainCard',
   components: {
-    MainCardSection,
+    WrapperCards,
   },
 };
 </script>

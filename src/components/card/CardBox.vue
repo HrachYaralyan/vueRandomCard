@@ -2,9 +2,9 @@
   <div class="cardBox">
     <h1>CardBox</h1>
     <h1>
-      {{ card }}
+      {{ cardNumber }}
     </h1>
-    <button @click="stateController.removeCard(card)">X</button>
+    <button @click="stateController.removeCard(cardNumber)">X</button>
   </div>
 </template>
 
@@ -17,7 +17,9 @@ export default {
     return { stateController };
   },
   props: {
-    card: {},
+    cardNumber: {
+      type:Number
+    },
   },
 };
 </script>

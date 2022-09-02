@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-    <CardBox v-for="card in stateController.card" :card="card" />
+    <CardBox v-for="card in stateController.card" :cardNumber="card" />
   </div>
 </template>
 
@@ -16,7 +16,7 @@ export default {
   },
   components: { CardBox },
   methods: {
-    getLocalData() {
+    checkLocalData() {
       if (localStorage.getItem('LocalData')) {
         this.stateController.getData(
           JSON.parse(localStorage.getItem('LocalData'))
@@ -30,7 +30,7 @@ export default {
     },
   },
   mounted() {
-    this.getLocalData();
+    this.checkLocalData();
   },
 };
 </script>

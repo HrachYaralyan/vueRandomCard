@@ -1,25 +1,21 @@
 <template>
   <div class="buttonWrapper">
-    <button class="sortButton" @click="stateController.sortCard">
-      Sort Card
+    <button class="button" >
+    <slot></slot>
     </button>
   </div>
 </template>
 
 <script>
-import { useCardStore } from '../../../stores/counter';
 
 export default {
-  name: 'sortButton',
-  setup() {
-    const stateController = useCardStore();
-    return { stateController };
-  },
+  name: 'button',
+
 };
 </script>
 
 <style scoped>
-.sortButton {
+.button {
   width: 90px;
   height: 40px;
   margin: 20px;
@@ -28,7 +24,7 @@ export default {
   transition: 1s;
   cursor: pointer;
 }
-.sortButton:hover {
+.button:hover {
   color: blue;
   background: white;
   border: 1px solid blue;
