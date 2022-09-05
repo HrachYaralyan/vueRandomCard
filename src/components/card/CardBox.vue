@@ -4,12 +4,12 @@
     <h1>
       {{ cardNumber }}
     </h1>
-    <button @click="removeCard(cardNumber)">X</button>
+    <button @click="removeCard(cardID)">X</button>
   </div>
 </template>
 
 <script>
-import { useCardStore } from '../../stores/counter';
+import { useCardStore } from '../../stores/store';
 
 export default {
   setup() {
@@ -18,6 +18,9 @@ export default {
   },
   props: {
     cardNumber: {
+      type: Number,
+    },
+    cardID: {
       type: Number,
     },
   },

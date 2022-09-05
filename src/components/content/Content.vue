@@ -1,11 +1,15 @@
 <template>
   <div class="content">
-    <CardBox v-for="card in stateController.card" :cardNumber="card" />
+    <CardBox
+      v-for="card in stateController.card"
+      :cardNumber="card.number"
+      :cardID="card.id"
+    />
   </div>
 </template>
 
 <script>
-import { useCardStore } from '../../stores/counter';
+import { useCardStore } from '../../stores/store';
 import CardBox from '../card/CardBox.vue';
 
 export default {
@@ -15,22 +19,8 @@ export default {
     return { stateController };
   },
   components: { CardBox },
-  methods: {
-    setLocalData() {
-      if (localStorage.getItem('LocalData')) {
-        this.stateController.getData(
-          JSON.parse(localStorage.getItem('LocalData'))
-        );
-      } else {
-        localStorage.setItem(
-          'LocalData',
-          JSON.stringify(this.stateController.card)
-        );
-      }
-    },
-  },
   mounted() {
-    this.setLocalData();
+    this.stateController.getData();
   },
 };
 </script>
